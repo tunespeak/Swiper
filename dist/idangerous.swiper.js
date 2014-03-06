@@ -1708,7 +1708,8 @@ var Swiper = function (selector, params) {
         }
         else {
             var groupSize = slideSize * params.slidesPerGroup;
-            newPosition = -(Math.floor(Math.abs(currentPosition)/Math.floor(groupSize))*groupSize + groupSize);
+            var currentIndex = _this.activeIndex + 1;
+            newPosition = -(groupSize * currentIndex);
         }
         if (newPosition < - maxWrapperPosition()) {
             newPosition = - maxWrapperPosition()
